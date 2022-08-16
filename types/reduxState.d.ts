@@ -4,3 +4,8 @@ import { UserType } from "./user";
 export type UserState = UserType & {
   isLogged: boolean;
 }
+
+//*common redux state
+export type CommonState = {
+  validateMode: boolean;
+}

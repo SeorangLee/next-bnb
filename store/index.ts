@@ -5,9 +5,14 @@ import {
   useSelector as useReduxSelector,
 } from "react-redux";
 import user from "./user";
+import common from "./common";
+import auth from "./auth";
+
 
 const rootReducer = combineReducers({
+  common: common.reducer,
   user: user.reducer,
+  auth: auth.reducer,
 });
 
 //*Type of store
