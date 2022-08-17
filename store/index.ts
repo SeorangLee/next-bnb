@@ -7,22 +7,27 @@ import {
 import user from "./user";
 import common from "./common";
 import auth from "./auth";
-
+// import registerRoom from "./registerRoom";
+// import searchRoom from "./searchRoom";
+// import room from "./room";
 
 const rootReducer = combineReducers({
   common: common.reducer,
   user: user.reducer,
   auth: auth.reducer,
+  // registerRoom: registerRoom.reducer,
+  // searchRoom: searchRoom.reducer,
+  // room: room.reducer,
 });
 
-//*Type of store
+//* 스토어의 타입
 export type RootState = ReturnType<typeof rootReducer>;
 
-let initialRootState : RootState;
+let initialRootState: RootState;
 
-const reducer = (state: any, action:any) => {
-  if(action.type === HYDRATE) {
-    if(state === initialRootState) {
+const reducer = (state: any, action: any) => {
+  if (action.type === HYDRATE) {
+    if (state === initialRootState) {
       return {
         ...state,
         ...action.payload,
@@ -33,10 +38,10 @@ const reducer = (state: any, action:any) => {
   return rootReducer(state, action);
 };
 
-//*make useSelector what can use type
+//* 타입 지원되는 커스텀 useSelector 만들기
 export const useSelector: TypedUseSelectorHook<RootState> = useReduxSelector;
 
-const initStore: MakeStore = () =>{
+const initStore: MakeStore = () => {
   const store = configureStore({
     reducer,
     devTools: true,

@@ -11,6 +11,7 @@ const globalStyle = css`
     font-family : Noto Sans, Noto Sans KR;
     color : ${palette.black};
   }
+  
 `;
 
 const GlobalStyle = createGlobalStyle`

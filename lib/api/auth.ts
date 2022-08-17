@@ -19,3 +19,6 @@ axios.post("/api/auth/signup", body);
 //*log in api
 export const loginAPI = (body: {email: string; password: string}) => 
   axios.post<UserType>("/api/auth/login", body);
+
+//*get user information of cookie's access_token
+export const meAPI = () => axios.get<UserType>("/api/auth/me");
