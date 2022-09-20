@@ -91,7 +91,6 @@ const LoginModal : React.FC<IProps> = ({ closeModal }) => {
       alert("이메일과 비밀번호를 입력해주세요.")
     } else {
       const loginBody = { email, password };
-
       try{
         const {data} = await loginAPI(loginBody);
         dispatch(userActions.setLoggedUser(data));
